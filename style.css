@@ -1,0 +1,52 @@
+*{
+    background-color: black;
+}
+
+#music-name{
+    font-family: Impact;
+    color: white;
+    margin: 40px opx;
+}
+
+#music.cover{
+    display: block;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 38px -10px #2980b9;
+    animation: glow .5s ease-in-out infinite alternate;
+    animation-play-state: paused;
+}
+
+@keyframes glow{
+    form{
+        box-shadow: 0px 0px 38px -10px #2980b9;
+    }
+    to{
+        box-shadow:  0px 0px 38px 10px #2980b9
+    }
+}
+
+#music-time{
+    width: 100%;
+    height: 2px;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 60px opx;
+    cursor: pointer;
+}
+
+#music-time::-webkit-slider-thumb{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-radius: 50%;
+    background-color: white;
+
+}
+
+#btns i{
+    font-size: 2em;
+    margin: 0px 20px;
+    color: white;
+    cursor: pointer;
+}
