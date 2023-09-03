@@ -3,6 +3,18 @@ let musics = [
         name : "Fearless(1)" ,
         cover : "imgs/img1.jpeg" ,
         audio : new Audio("./musics/Fearless(1).mp3")
+    },
+
+    {
+        name : "Fearless(2)" ,
+        cover : "imgs/img2.jpeg" ,
+        audio : new Audio("./musics/Fearless(2).mp3")
+    },
+
+    {
+        name : "Fearless(3)" ,
+        cover : "imgs/img3.jpeg" ,
+        audio : new Audio("./musics/Fearless(3).mp3")
     }
 ]
 
@@ -52,4 +64,51 @@ playBtn.addEventListener("click" , (e)=>{
         playBtn.classList.replace("fa-pause","fa-play")
 
     }
+})
+
+
+
+nextBtn.addEventListener("click" , (e)=>{
+    changeMusic("next")
+})
+
+preBtn.addEventListener("click" , (e)=>{
+    changeMusic("pre")
+})
+
+
+
+function changeMusic(state){
+    audio.pause()
+    range.value = 0
+    playBtn.classList.replace("fa-pause","fa-play")
+    musicCover.style.animationplaystate = "paused"
+    audio.currentMusic = 0
+    
+    if(state == "next"){
+
+        if(currentMusic == musics.lenght - 1)
+            currentMusic = 0
+        else currentMusic +=1
+    
+    }else{
+
+        if(currentMusic == 0)
+            currentMusic = musics.lenght - 1
+        else currentMusic -=1 
+
+    }
+
+}
+
+
+
+audio = musics[currentMusic].audio
+musicCover.src = musics[currentMusic].cover
+musicName.innerText = musics[currentMusic].name
+
+
+
+audio.addEventListener("timeupdate" , (e)=>{
+    range.value = audio.currentTime
 })
