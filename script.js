@@ -18,7 +18,6 @@ let musics = [
     }
 ]
 
-
 let range = document.querySelector("#music-time")
 let playBtn= document.querySelector("#play-btn")
 let nextBtn = document.querySelector("#next-btn")
@@ -35,7 +34,6 @@ musicName.innerText = musics[currentMusic].name
 
 
 audio.addEventListener("canplay" , (e)=>{
-    console.log(audio.duration)
     range.max = audio.duration
 })
 
@@ -83,19 +81,19 @@ function changeMusic(state){
     range.value = 0
     playBtn.classList.replace("fa-pause","fa-play")
     musicCover.style.animationplaystate = "paused"
-    audio.currentMusic = 0
+    audio.currentTime = 0
     
     if(state == "next"){
 
-        if(currentMusic == musics.lenght - 1)
+        if(currentMusic == musics.length - 1)
             currentMusic = 0
-        else currentMusic +=1
-    
+        else currentMusic += 1
+        console.log(currentMusic)
     }else{
 
         if(currentMusic == 0)
             currentMusic = musics.lenght - 1
-        else currentMusic -=1 
+        else currentMusic -= 1 
 
     }
 
