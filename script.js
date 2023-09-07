@@ -54,11 +54,11 @@ range.addEventListener("input" , (e)=>{
 playBtn.addEventListener("click" , (e)=>{
     if(audio.paused){
         audio.play()
-        musicCover.style.animationplaystate = "running"
+        musicCover.style.animationPlayState = "running"
         playBtn.classList.replace("fa-play" , "fa-pause")
     }else{
         audio.pause()
-        musicCover.style.animationplaystate = "paused"
+        musicCover.style.animationPlayState = "paused"
         playBtn.classList.replace("fa-pause","fa-play")
 
     }
@@ -80,7 +80,7 @@ function changeMusic(state){
     audio.pause()
     range.value = 0
     playBtn.classList.replace("fa-pause","fa-play")
-    musicCover.style.animationplaystate = "paused"
+    musicCover.style.animationPlayState = "paused"
     audio.currentTime = 0
     
     if(state == "next"){
@@ -90,6 +90,7 @@ function changeMusic(state){
         else currentMusic += 1
         console.log(currentMusic)
         playBtn.classList.replace("fa-play" , "fa-pause")
+        musicCover.style.animationPlayState = "running"
     }else{
 
         if(currentMusic == 0)
@@ -97,6 +98,7 @@ function changeMusic(state){
         else currentMusic -= 1
         console.log(currentMusic)
         playBtn.classList.replace("fa-play" , "fa-pause")
+        musicCover.style.animationPlayState = "running"
 
     }
 
