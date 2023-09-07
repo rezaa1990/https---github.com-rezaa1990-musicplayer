@@ -33,6 +33,9 @@ let audio = musics[currentMusic].audio
 musicCover.src = musics[currentMusic].cover
 musicName.innerText = musics[currentMusic].name
 
+audio.addEventListener("ended", (e) => {
+    changeMusic("next")
+})
 
 fullScreenBtn.addEventListener("click", (e)=>{
     document.documentElement.requestFullscreen()
