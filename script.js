@@ -25,12 +25,18 @@ let preBtn = document.querySelector("#pre-btn")
 let musicCover = document.querySelector("#music-cover")
 let musicName = document.querySelector("#music-name")
 let volumeBtn = document.querySelector("#volume-btn")
-
+let fullScreenBtn = document.querySelector("#fullScreenBtn")
+console.log(fullScreenBtn)
 
 let currentMusic = 0;
 let audio = musics[currentMusic].audio
 musicCover.src = musics[currentMusic].cover
 musicName.innerText = musics[currentMusic].name
+
+
+fullScreenBtn.addEventListener("click", (e)=>{
+    document.documentElement.requestFullscreen()
+})
 
 
 volumeBtn.addEventListener("input", (e)=>{
