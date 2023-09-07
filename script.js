@@ -24,6 +24,7 @@ let nextBtn = document.querySelector("#next-btn")
 let preBtn = document.querySelector("#pre-btn")
 let musicCover = document.querySelector("#music-cover")
 let musicName = document.querySelector("#music-name")
+let volumeBtn = document.querySelector("#volume-btn")
 
 
 let currentMusic = 0;
@@ -32,6 +33,9 @@ musicCover.src = musics[currentMusic].cover
 musicName.innerText = musics[currentMusic].name
 
 
+volumeBtn.addEventListener("input", (e)=>{
+    audio.volume = volumeBtn.value / 100
+})
 
 audio.addEventListener("canplay" , (e)=>{
     range.max = audio.duration

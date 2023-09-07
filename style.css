@@ -1,4 +1,4 @@
-/* میان‌گذاری تمام المنت‌ها به وسط صفحه */
+
 body {
     display: flex;
     flex-direction: column;
@@ -54,4 +54,10 @@ body {
     color: rgb(252, 3, 3);
     cursor: pointer;
   }
-  
+
+  #volume-btn{
+    height: 2px;
+    appearance: none;
+    background-color: rgba(243, 9, 9, 0.2);
+    cursor: pointer;
+  }
