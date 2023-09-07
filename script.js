@@ -120,4 +120,12 @@ function changeMusic(state){
     musicName.innerText = musics[currentMusic].name
     audio.play()
 
+    audio.addEventListener("timeupdate" , (e)=>{
+        range.value = audio.currentTime
+    })
+
+    audio.addEventListener("ended", (e) => {
+        changeMusic("next")
+    })
+
 }
