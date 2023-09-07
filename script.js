@@ -89,24 +89,20 @@ function changeMusic(state){
             currentMusic = 0
         else currentMusic += 1
         console.log(currentMusic)
+        playBtn.classList.replace("fa-play" , "fa-pause")
     }else{
 
         if(currentMusic == 0)
-            currentMusic = musics.lenght - 1
-        else currentMusic -= 1 
+            currentMusic = musics.length - 1
+        else currentMusic -= 1
+        console.log(currentMusic)
+        playBtn.classList.replace("fa-play" , "fa-pause")
 
     }
 
+    audio = musics[currentMusic].audio
+    musicCover.src = musics[currentMusic].cover
+    musicName.innerText = musics[currentMusic].name
+    audio.play()
+
 }
-
-
-
-audio = musics[currentMusic].audio
-musicCover.src = musics[currentMusic].cover
-musicName.innerText = musics[currentMusic].name
-
-
-
-audio.addEventListener("timeupdate" , (e)=>{
-    range.value = audio.currentTime
-})
